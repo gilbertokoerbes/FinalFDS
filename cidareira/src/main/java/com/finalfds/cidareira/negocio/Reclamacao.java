@@ -1,32 +1,45 @@
 package com.finalfds.cidareira.negocio;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Reclamacao {
     @Id
-    private long n_reclamacao;
+    private int n_reclamacao;
     private String titulo;
     private String descricao;
-    private Date dataAbertura;
+    private String dataAbertura;
     private String endereco;
     private Usuario idAutor;
+    private Status statusReclamacao;
+    private String linkImagem ;
 
-    
-
-    public Reclamacao(long n_reclamacao, String titulo, String descricao, Date dataAbertura, String endereco, Usuario idUsuario) {
+    @Autowired    
+    public Reclamacao(int n_reclamacao, String titulo, String descricao, String dataAbertura, String endereco, Usuario idUsuario, Status status){
         this.n_reclamacao = n_reclamacao;
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataAbertura = dataAbertura;
         this.endereco = endereco;
         this.idAutor = idUsuario;
+        this.statusReclamacao = status;
+        this.linkImagem ="";
+        statusReclamacao.setStatus("aberta", idUsuario);//Força a reclamacao estar como aberta
     }
-
-
+    @Autowired    
+    public Reclamacao(int n_reclamacao, String titulo, String descricao, String dataAbertura, String endereco, Usuario idUsuario, Status status, String url){
+        this.n_reclamacao = n_reclamacao;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.dataAbertura = dataAbertura;
+        this.endereco = endereco;
+        this.idAutor = idUsuario;
+        this.statusReclamacao = status;
+        this.linkImagem = url;
+        statusReclamacao.setStatus("aberta", idUsuario);//Força a reclamacao estar como aberta
+    }
     
     @Override
     public String toString() {
@@ -43,7 +56,7 @@ public class Reclamacao {
         return this.n_reclamacao;
     }
 
-    public void setN_reclamacao(long n_reclamacao) {
+    private void setN_reclamacao(int n_reclamacao) {
         this.n_reclamacao = n_reclamacao;
     }
 
@@ -63,11 +76,11 @@ public class Reclamacao {
         this.descricao = descricao;
     }
 
-    public Date getDataAbertura() {
+    public String getDataAbertura() {
         return this.dataAbertura;
     }
 
-    public void setDataAbertura(Date dataAbertura) {
+    public void setDataAbertura(String dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
 
@@ -79,12 +92,27 @@ public class Reclamacao {
         this.endereco = endereco;
     }
 
-    public Usuario getIdAutor() {
-        return this.idAutor;
+    public int getIdAutor() {
+        return (int) this.idAutor.getIdUsuario();
     }
 
-    public void setIdAutor(Usuario idAutor) {
+    private void setIdAutor(Usuario idAutor) {
         this.idAutor = idAutor;
-    }    
-    
+    }
+
+    public String getstatusReclamacao(){
+        return statusReclamacao.toString();
+    }
+    public void setstatusReclamacao(String status, Usuario user){
+        statusReclamacao.setStatus(status, user);
+        
+    }
+
+    public String getLinkImagem(){
+        return this.linkImagem;
+    }
+
+    public void setLinkImagem(String url){
+        this.linkImagem = url;
+    }   
 }

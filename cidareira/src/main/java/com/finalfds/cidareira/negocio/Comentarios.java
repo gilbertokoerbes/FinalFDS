@@ -5,17 +5,21 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 public class Comentarios{
     @Id
-    private long n_comentario;
-    private long n_reclamacao;
+    private int n_comentario;
+    private Reclamacao n_reclamacao;
     private String titulo;
     private String descricao;
     private Date dataInsercao;
     private Usuario idAutor;
+    private String linkImagem;
 
-    public Comentarios(long n_comentario, long n_reclamacao, String titulo, String descricao, Date dataInsercao, Usuario usuario){
+    @Autowired
+    public Comentarios(int n_comentario, Reclamacao n_reclamacao, String titulo, String descricao, Date dataInsercao, Usuario usuario){
 
         this.n_comentario = n_comentario;
         this.n_reclamacao = n_reclamacao;
@@ -23,10 +27,21 @@ public class Comentarios{
         this.descricao = descricao;
         this.dataInsercao = dataInsercao;
         this.idAutor = usuario;
-
     }
 
-    public long get_n_reclamacao(){
+    @Autowired
+    public Comentarios(int n_comentario, Reclamacao n_reclamacao, String titulo, String descricao, Date dataInsercao, Usuario usuario, String link){
+
+        this.n_comentario = n_comentario;
+        this.n_reclamacao = n_reclamacao;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.dataInsercao = dataInsercao;
+        this.idAutor = usuario;
+        this.linkImagem = link;
+    }
+
+    public Reclamacao get_n_reclamacao(){
         return this.n_reclamacao;
     }
     
@@ -46,11 +61,11 @@ public class Comentarios{
         return this.dataInsercao;
     }
 
-    public Usuario getIdAutor()){
+    public Usuario getIdAutor(){
         return this.idAutor;
     }
     
-    public void set_n_comentario(long n_comentario){
+    public void set_n_comentario(int n_comentario){
         this.n_comentario = n_comentario;
     }
 
@@ -62,9 +77,12 @@ public class Comentarios{
         this.descricao = descricao;
     }
 
-    public void setStatusReclamacao(){
-        super.setStatusResolvido();
-    }
+    public String getLinkImagem(){
+        return this.linkImagem;
+    }    
 
+    public void setUrlImagem(String url){
+        this.linkImagem = url;
+    }
     
 }

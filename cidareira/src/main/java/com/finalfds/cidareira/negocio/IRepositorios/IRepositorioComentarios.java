@@ -1,5 +1,9 @@
 package com.finalfds.cidareira.negocio.IRepositorios;
 
-public class IRepositorioComentarios {
+import com.finalfds.cidareira.negocio.Comentarios;
+
+public interface IRepositorioComentarios {
+    boolean cadastraComentario(Comentarios c);
+    int ComentariosUsuariosOficiais();
     
 }

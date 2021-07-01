@@ -8,7 +8,6 @@ public interface IRepositorioUsuarios {
     List<Usuario> all();
     void removeAll();
     boolean logIn(Usuario usuario);
-    //....
-    
-    
+    Usuario getReclamacao(Reclamacao reclamacao);
+    List<Usuario> getTipo(String tipo);
 }

@@ -1,7 +1,7 @@
 package com.finalfds.cidareira.negocio.servicos;
 
-import com.finalfds.cidareira.negocio.Reclamacao;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
+import com.finalfds.cidareira.negocio.entidades.Reclamacao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

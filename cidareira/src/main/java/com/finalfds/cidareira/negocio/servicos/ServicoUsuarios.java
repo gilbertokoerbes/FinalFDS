@@ -1,7 +1,7 @@
 package com.finalfds.cidareira.negocio.servicos;
 
-import com.finalfds.cidareira.negocio.Usuario;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioUsuarios;
+import com.finalfds.cidareira.negocio.entidades.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

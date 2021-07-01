@@ -1,7 +1,6 @@
 package com.finalfds.cidareira.negocio.servicos;
 
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
-import com.finalfds.cidareira.negocio.entidades.Bairros;
 import com.finalfds.cidareira.negocio.entidades.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Usuario;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;
@@ -36,9 +35,5 @@ public class ServicoReclamacao{
 
     public List<Reclamacao> getStatus(String status){
         return reclamacoesR.getStatus(status);
-    }
-
-    public List<Reclamacao> getBairro(Bairros bairros){
-        return reclamacoesR.getBairros(bairros);
     }
 }

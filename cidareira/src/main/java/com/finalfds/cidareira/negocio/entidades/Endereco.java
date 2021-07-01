@@ -5,21 +5,18 @@ public class Endereco {
     private String nomeRua;
     private int numeroRua;
     private String complementoRua;
-    private Bairros bairros;
 
-    public Endereco(Long id, String nomeRua, int numeroRua, String complementoRua, Bairros bairros){
+    public Endereco(Long id, String nomeRua, int numeroRua, String complementoRua){
         this.id = id;
         this.nomeRua = nomeRua;
         this.numeroRua = numeroRua;
         this.complementoRua = complementoRua;
-        this.bairros = bairros;
     }
 
-    public Endereco(Long id, String nomeRua, int numeroRua, Bairros bairros){
+    public Endereco(Long id, String nomeRua, int numeroRua){
         this.id = id;
         this.nomeRua = nomeRua;
         this.numeroRua = numeroRua;
-        this.bairros = bairros;
     }
 
     public Endereco(){
@@ -40,9 +37,5 @@ public class Endereco {
 
     public String getComplementoRua(){
         return complementoRua;
-    }
-
-    public Bairros getBairros(){
-        return bairros;
     }
 }

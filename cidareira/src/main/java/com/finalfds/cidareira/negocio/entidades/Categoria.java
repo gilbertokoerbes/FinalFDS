@@ -6,5 +6,4 @@ public enum Categoria {
     TRES,
     QUATRO,
     CINCO,
-    SEIS;
 }

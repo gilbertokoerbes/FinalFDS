@@ -3,25 +3,21 @@ package com.finalfds.cidareira.aplicacao.Casos_de_uso_Comum;
 import com.finalfds.cidareira.adaptadores.controllers.ReclamacoesController;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioComentarios;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
-import com.finalfds.cidareira.negocio.entidades.Reclamacao;
-import com.finalfds.cidareira.negocio.entidades.Status;
-import com.finalfds.cidareira.negocio.entidades.Usuario;
+import com.finalfds.cidareira.negocio.entidades.*;
+import com.finalfds.cidareira.negocio.servicos.ServicoReclamacao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class AbrirReclamacao{
-    private IRepositorioReclamacoes repoReclamacao;
+    private ServicoReclamacao servicoReclamacao;
 
-    public AbrirReclamacao(IRepositorioReclamacoes repoReclamacao){
-        this.repoReclamacao = repoReclamacao;
+    @Autowired
+    public AbrirReclamacao(ServicoReclamacao servicoReclamacao){
+        this.servicoReclamacao = servicoReclamacao;
     }
-        
-    public void cadastraReclamacao(Usuario user, Status status){
-        
+
+    public void run(Reclamacao reclamacao){
+        servicoReclamacao.registrarReclamacao(reclamacao);
     }
-    
-    
-
-
-
-
 }

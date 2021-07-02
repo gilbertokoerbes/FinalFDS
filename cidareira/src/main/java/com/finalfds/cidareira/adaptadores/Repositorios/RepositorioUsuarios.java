@@ -1,17 +1,12 @@
 package com.finalfds.cidareira.adaptadores.Repositorios;
 
+import java.util.List;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioUsuarios;
-import com.finalfds.cidareira.negocio.entidades.Usuario;
-
+import com.finalfds.cidareira.negocio.entidades.*;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
-@Component
-public class RepositorioUsuarios implements IRepositorioUsuarios{
-
-    @Override
-    public boolean cadastraUsuario(Usuario user) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-    
+public interface RepositorioUsuarios extends CrudRepository<Usuario, Long>{
+    List<Usuario> findAll();
+    List<Usuario> findId(long id);
 }

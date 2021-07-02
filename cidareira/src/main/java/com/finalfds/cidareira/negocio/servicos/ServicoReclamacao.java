@@ -17,8 +17,8 @@ public class ServicoReclamacao{
         this.reclamacoesR = reclamacoesR;
     }
 
-    public List<Reclamacao>all(){
-        return reclamacoesR.all();
+    public List<Reclamacao>getAllReclamacao(){
+        return reclamacoesR.getAllReclamacao();
     }
 
     public void registrarReclamacao(Reclamacao reclamacao){

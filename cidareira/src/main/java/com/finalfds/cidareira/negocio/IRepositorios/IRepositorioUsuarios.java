@@ -4,10 +4,9 @@ import com.finalfds.cidareira.negocio.entidades.Usuario;
 import java.util.List;
 
 public interface IRepositorioUsuarios {
-    
-    List<Usuario> all();
-    void removeAll();
-    boolean logIn(Usuario usuario);
+    boolean register(Usuario usuario);
+    void removeAllUsuarios();
+    List<Usuario> GetAllUsuarios();
     Usuario getReclamacao(Reclamacao reclamacao);
     List<Usuario> getTipo(String tipo);
 }

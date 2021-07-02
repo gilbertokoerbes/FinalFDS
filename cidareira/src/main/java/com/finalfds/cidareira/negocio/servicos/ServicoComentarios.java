@@ -19,11 +19,11 @@ public class ServicoComentarios {
     }
 
     public void romeveAll(){
-        comentariosRepo.romeveAll();
+        comentariosRepo.romeveAllComentarios();
     }
 
     public boolean cadastraComentario(Comentarios comentarios, Reclamacao reclamacao){
-        return comentariosRepo.cadastraComentario(comentarios, reclamacao);
+        return comentariosRepo.register(comentarios, reclamacao);
     }
 
     public List<Comentarios> getCategoria(Categoria categoria){

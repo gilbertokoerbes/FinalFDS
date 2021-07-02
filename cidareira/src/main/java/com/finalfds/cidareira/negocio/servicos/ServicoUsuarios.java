@@ -19,16 +19,16 @@ public class ServicoUsuarios {
         this.userRepo = userRepo;
     }
 
-    public boolean logIn(Usuario usuario){
-        return userRepo.logIn(usuario);
+    public boolean register(Usuario usuario){
+        return userRepo.register(usuario);
     }
     
-    public List<Usuario> all(){
-        return userRepo.all();
+    public List<Usuario> GetAllUsuarios(){
+        return userRepo.GetAllUsuarios();
     }
 
-    public void removeAll(){
-        userRepo.removeAll();
+    public void removeAllUsuarios(){
+        userRepo.removeAllUsuarios();
     }
 
     public Usuario getReclamacao(Reclamacao reclamacao){

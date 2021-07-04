@@ -9,8 +9,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TotReclamacoes {
-    @Autowired
+
+
     private ServicoReclamacao servicoReclamacao;
+
+    @Autowired
+    public TotReclamacoes(ServicoReclamacao servicoReclamacao){
+        this.servicoReclamacao =  servicoReclamacao;
+
+    }
 
     public List<Reclamacao> run(){
         return this.servicoReclamacao.getAllReclamacao();

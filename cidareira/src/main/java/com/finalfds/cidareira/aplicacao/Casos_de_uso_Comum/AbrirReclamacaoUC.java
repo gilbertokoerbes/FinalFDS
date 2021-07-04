@@ -1,8 +1,5 @@
 package com.finalfds.cidareira.aplicacao.Casos_de_uso_Comum;
 
-import com.finalfds.cidareira.adaptadores.controllers.ReclamacoesController;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioComentarios;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
 import com.finalfds.cidareira.negocio.entidades.*;
 import com.finalfds.cidareira.negocio.servicos.ServicoReclamacao;
 import org.springframework.beans.factory.annotation.Autowired;

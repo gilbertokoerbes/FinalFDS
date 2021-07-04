@@ -1,14 +1,8 @@
 package com.finalfds.cidareira.adaptadores.Repositorios;
 
-import java.time.LocalDate;
 import java.util.List;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
 import com.finalfds.cidareira.negocio.entidades.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 
 public interface IRepositorioReclamacoesCRUD extends CrudRepository<Reclamacao, Long>{
     List<Reclamacao> findAll();
@@ -17,8 +11,8 @@ public interface IRepositorioReclamacoesCRUD extends CrudRepository<Reclamacao, 
     List<Reclamacao> findByStatus(Reclamacao r);
     List<Reclamacao> findCategoria(Categoria categoria);
 
-    @Query ("selec * from Reclamacao c where c.dataPublicacao >= :dataInicia AND c.dataPublica < :dataFinal")
-    List<Reclamacao> findData(LocalDate dataInicial, LocalDate dataFinal);
+   // @Query ("selec * from Reclamacao c where c.dataPublicacao >= :dataInicia AND c.dataPublica < :dataFinal")
+   // List<Reclamacao> findData(LocalDate dataInicial, LocalDate dataFinal);
 }
 
 

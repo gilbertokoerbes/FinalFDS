@@ -2,14 +2,8 @@ package com.finalfds.cidareira.negocio.entidades;
 
 import java.util.Date;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-//@Entity
 public class Comentarios{
-    //@Id
+
     private int n_comentario;
     private Reclamacao n_reclamacao;
     private String titulo;
@@ -18,7 +12,7 @@ public class Comentarios{
     private Usuario idAutor;
     private String linkImagem;
 
-    @Autowired
+
     public Comentarios(int n_comentario, Reclamacao n_reclamacao, String titulo, String descricao, Date dataInsercao, Usuario usuario){
 
         this.n_comentario = n_comentario;
@@ -29,7 +23,7 @@ public class Comentarios{
         this.idAutor = usuario;
     }
 
-    @Autowired
+
     public Comentarios(int n_comentario, Reclamacao n_reclamacao, String titulo, String descricao, Date dataInsercao, Usuario usuario, String link){
 
         this.n_comentario = n_comentario;

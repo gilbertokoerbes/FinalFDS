@@ -13,7 +13,7 @@ public class TotReclamacoesUCAdmin {
     private ServicoReclamacao servicoReclamacao;
     
     @Autowired
-    public void TotReclamacoesUCAdmin(ServicoReclamacao servicoReclamacao){
+    public TotReclamacoesUCAdmin(ServicoReclamacao servicoReclamacao){
         this.servicoReclamacao = servicoReclamacao;
     }
 

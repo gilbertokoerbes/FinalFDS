@@ -21,8 +21,9 @@ public class ServicoReclamacao{
         return reclamacoesR.getAllReclamacao();
     }
 
-    public void registrarReclamacao(Reclamacao reclamacao){
+    public boolean registrarReclamacao(Reclamacao reclamacao){
         reclamacoesR.register(reclamacao);
+        return true;
     }
 
     public List<Reclamacao> getCategoria(Categoria categoria){

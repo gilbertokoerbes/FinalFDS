@@ -21,13 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/reclamacoes")
 public class ReclamacoesController{
     private AbrirReclamacaoUC abrirReclamacaoUC;
-    private ServicoReclamacao servicoReclamacao;
     private TotReclamacoesUCAdmin totReclamacoesUCAdmin;
 
     @Autowired
-    public void ReclamacoesController(AbrirReclamacaoUC abrirReclamacaoUC, TotReclamacoesUCAdmin totReclamacoesUCAdmin){
+    public ReclamacoesController(AbrirReclamacaoUC abrirReclamacaoUC, TotReclamacoesUCAdmin totReclamacoesUCAdmin){
         this.abrirReclamacaoUC = abrirReclamacaoUC;
-        this.servicoReclamacao = servicoReclamacao;
         this.totReclamacoesUCAdmin = totReclamacoesUCAdmin;
 
     }

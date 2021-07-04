@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AbrirReclamacao{
+public class AbrirReclamacaoUC{
     private ServicoReclamacao servicoReclamacao;
 
     @Autowired
-    public AbrirReclamacao(ServicoReclamacao servicoReclamacao){
+    public AbrirReclamacaoUC(ServicoReclamacao servicoReclamacao){
         this.servicoReclamacao = servicoReclamacao;
     }
 

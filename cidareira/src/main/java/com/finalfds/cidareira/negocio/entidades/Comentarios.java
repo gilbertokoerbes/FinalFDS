@@ -2,14 +2,14 @@ package com.finalfds.cidareira.negocio.entidades;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Entity
+//@Entity
 public class Comentarios{
-    @Id
+    //@Id
     private int n_comentario;
     private Reclamacao n_reclamacao;
     private String titulo;

@@ -11,7 +11,7 @@ public interface IRepositorioReclamacoes{
     boolean register(Reclamacao reclamacao);
     void romeveAllReclamacao();
     List<Reclamacao> getAllReclamacao();
-    List<Reclamacao> getStatus(String status);
+    String getStatus(long statusid);
     List<Reclamacao> getCategoria(Categoria categoria);
     List<Reclamacao> getUsuario(Usuario usuario);
     List<Reclamacao> getEndereco(Endereco endereco);

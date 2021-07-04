@@ -33,7 +33,7 @@ public class ServicoReclamacao{
         return reclamacoesR.getUsuario(usuario);
     }
 
-    public List<Reclamacao> getStatus(String status){
-        return reclamacoesR.getStatus(status);
+    public String getStatus(Long Statusid){
+        return reclamacoesR.getStatus(Statusid);
     }
 }

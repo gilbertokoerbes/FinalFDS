@@ -19,5 +19,6 @@ public class NumMedComent {
     }
 
     public String NumMedComentBairro(){
+        return "";
     }
 }

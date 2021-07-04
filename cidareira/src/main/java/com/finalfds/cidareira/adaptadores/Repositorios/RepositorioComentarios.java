@@ -1,7 +1,5 @@
 package com.finalfds.cidareira.adaptadores.Repositorios;
 
-import com.finalfds.cidareira.negocio.*;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioComentarios;
 import com.finalfds.cidareira.negocio.entidades.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Comentarios;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;

@@ -1,12 +1,12 @@
 package com.finalfds.cidareira.negocio.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 
-@Entity
+//@Entity
 public class Usuario {
     
-    @Id
+    //@Id
     private long idUsuario;
     private String tipo;
 

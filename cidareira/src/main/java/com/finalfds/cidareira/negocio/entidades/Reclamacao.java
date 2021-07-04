@@ -1,6 +1,7 @@
 package com.finalfds.cidareira.negocio.entidades;
 
 import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

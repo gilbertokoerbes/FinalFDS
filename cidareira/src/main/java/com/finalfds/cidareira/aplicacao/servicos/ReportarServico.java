@@ -1,5 +1,9 @@
 package com.finalfds.cidareira.aplicacao.servicos;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import com.finalfds.cidareira.aplicacao.modelos.respostas.ReclamacaoBairroRes;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,5 +18,7 @@ public class ReportarServico {
         this.servicoUsuariosApp = servicoUsuariosApp;
     }
 
-    //public List
+    public List<ReclamacaoBairroRes> reclamacaoBairroRes(LocalDate dataInicial, LocalDate dataFinal){
+        return servicoReclamacaoApp.reclamacaoBairroRes(dataInicial, dataFinal);
+    }
 }

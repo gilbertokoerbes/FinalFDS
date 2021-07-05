@@ -1,23 +1,19 @@
 package com.finalfds.cidareira.aplicacao.CasosDeUso;
 
-import com.finalfds.cidareira.adaptadores.controllers.ReclamacoesController;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioComentarios;
-import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
-import com.finalfds.cidareira.negocio.entidades.*;
-import com.finalfds.cidareira.negocio.servicos.ServicoReclamacao;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.finalfds.cidareira.aplicacao.modelos.requisicao.AbrirReclamacaoReq;
+import com.finalfds.cidareira.aplicacao.modelos.respostas.ReclamacaoRes;
+import com.finalfds.cidareira.aplicacao.servicos.ServicoReclamacaoApp;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AbrirReclamacao{
-    private ServicoReclamacao servicoReclamacao;
+    private ServicoReclamacaoApp servicoReclamacaoaApp;
 
-    @Autowired
-    public AbrirReclamacao(ServicoReclamacao servicoReclamacao){
-        this.servicoReclamacao = servicoReclamacao;
+    public AbrirReclamacao(ServicoReclamacaoApp servicoReclamacaoaApp){
+        this.servicoReclamacaoaApp = servicoReclamacaoaApp;
     }
 
-    public void run(Reclamacao reclamacao){
-        servicoReclamacao.registrarReclamacao(reclamacao);
+    public ReclamacaoRes run(AbrirReclamacaoReq requisicao){
+        return servicoReclamacaoaApp.AbrirReclamacao(requisicao, new ReclamacaoRes());
     }
 }

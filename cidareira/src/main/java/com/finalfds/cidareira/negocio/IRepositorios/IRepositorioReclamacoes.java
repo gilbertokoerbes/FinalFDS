@@ -1,5 +1,6 @@
 package com.finalfds.cidareira.negocio.IRepositorios;
 
+import java.time.LocalDate;
 import java.util.*;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;
 
@@ -8,5 +9,5 @@ public interface IRepositorioReclamacoes{
 
     Optional<Reclamacao> FindById(long id);
 
-    //List<String[]> ....(LocalDate dataInicial, LocalDate dataFinal);
+    List<String[]> reclamacaoBairroRes (LocalDate dataInicial, LocalDate dataFinal);
 }

@@ -2,10 +2,11 @@ package com.finalfds.cidareira.adaptadores.Repositorios;
 
 import com.finalfds.cidareira.negocio.*;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioComentarios;
-import com.finalfds.cidareira.negocio.entidades.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Comentarios;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;
 import com.finalfds.cidareira.negocio.entidades.Usuario;
+import com.finalfds.cidareira.negocio.entidades.enums.Categoria;
+
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;

@@ -1,40 +1,30 @@
 package com.finalfds.cidareira.negocio.servicos;
 
 import com.finalfds.cidareira.negocio.IRepositorios.*;
-import com.finalfds.cidareira.negocio.entidades.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Usuario;
+import com.finalfds.cidareira.negocio.entidades.enums.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Comentarios;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import java.util.List;
+import java.util.*;
 
-@Component
-public class ServicoComentarios {
+public abstract class ServicoComentarios {
     public IRepositorioComentarios comentariosRepo;
-    
-    @Autowired
-    public ServicoComentarios(IRepositorioComentarios comentariosRepo){
+    public ServicoReclamacao servicoReclamacao;
+
+    public ServicoComentarios(IRepositorioComentarios comentariosRepo, ServicoReclamacao servicoReclamacao){
         this.comentariosRepo = comentariosRepo;
+        this.servicoReclamacao = servicoReclamacao;
     }
 
-    public void romeveAll(){
-        comentariosRepo.romeveAllComentarios();
+    public <T> T abrirComentario(){
     }
 
-    public boolean cadastraComentario(Comentarios comentarios, Reclamacao reclamacao){
-        return comentariosRepo.register(comentarios, reclamacao);
+    public Optional<Comentarios> findById(long id){
+        return comentariosRepo.findById(id);
     }
 
-    public List<Comentarios> getCategoria(Categoria categoria){
-        return comentariosRepo.getCategoria(categoria);
-    }
-
-    public List<Comentarios> getUsuario(Usuario usuario){
-        return comentariosRepo.getUsuario(usuario);
-    }
-    
-    public List<Comentarios> getReclamacao(Reclamacao reclamacao){
-        return comentariosRepo.getReclamacao(reclamacao);
+    public <T> Optional<T> editarComentario(){
     }
 }

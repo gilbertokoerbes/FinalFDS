@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
 import com.finalfds.cidareira.negocio.entidades.*;
+import com.finalfds.cidareira.negocio.entidades.enums.Categoria;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

@@ -1,39 +1,28 @@
 package com.finalfds.cidareira.negocio.servicos;
 
+import com.finalfds.cidareira.aplicacao.Casos_de_uso_Comum.AbrirReclamacao;
 import com.finalfds.cidareira.negocio.IRepositorios.IRepositorioReclamacoes;
-import com.finalfds.cidareira.negocio.entidades.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Usuario;
+import com.finalfds.cidareira.negocio.entidades.enums.Categoria;
 import com.finalfds.cidareira.negocio.entidades.Reclamacao;
-import java.util.List;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-public class ServicoReclamacao{
-    public IRepositorioReclamacoes reclamacoesR;
+public abstract class ServicoReclamacao{
+    public IRepositorioReclamacoes reclamacoesRepo;
 
-    @Autowired
-    public ServicoReclamacao(IRepositorioReclamacoes reclamacoesR){
-        this.reclamacoesR = reclamacoesR;
+    public ServicoReclamacao(IRepositorioReclamacoes reclamacoesRepo){
+        this.reclamacoesRepo = reclamacoesRepo;
     }
 
-    public List<Reclamacao>getAllReclamacao(){
-        return reclamacoesR.getAllReclamacao();
+    public <T> T AbrirReclamacao(){
     }
 
-    public void registrarReclamacao(Reclamacao reclamacao){
-        reclamacoesR.register(reclamacao);
+    public Optional<Reclamacao> findById(long id){
+        return reclamacoesRepo.FindById(id);
     }
 
-    public List<Reclamacao> getCategoria(Categoria categoria){
-        return reclamacoesR.getCategoria(categoria);
-    }
-
-    public List<Reclamacao> getUsuario(Usuario usuario){
-        return reclamacoesR.getUsuario(usuario);
-    }
-
-    public List<Reclamacao> getStatus(String status){
-        return reclamacoesR.getStatus(status);
+    public <T> Optional<T> editarReclamacao(){
     }
 }

@@ -1,4 +1,4 @@
-package com.finalfds.cidareira.aplicacao.Casos_de_uso_Comum;
+package com.finalfds.cidareira.aplicacao.CasosDeUso;
 
 import com.finalfds.cidareira.negocio.entidades.*;
 import com.finalfds.cidareira.negocio.entidades.enums.Categoria;
